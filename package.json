@@ -8,7 +8,10 @@
 		"preview": "astro build && wrangler dev",
 		"astro": "astro",
 		"deploy": "astro build && wrangler deploy",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"format": "npx @biomejs/biome format --write src/",
+		"lint": "npx @biomejs/biome lint --write src/",
+		"check": "npx @biomejs/biome check src/"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.10",
