@@ -16,7 +16,7 @@ const posts = await getCollection('posts');
         posts.map((post) => (
           <li class="p-3">
 						<article class="group p-3 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
-              <a href={post.id}>
+              <a href=`posts/${post.id}`>
 								<div class="text-sm text-slate-500">
 									<time datetime="{post.data.publishedAt}">{post.data.publishedAt}</time>
 								</div>
