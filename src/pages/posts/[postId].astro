@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageTitle from '../../layouts/PageTitle.astro';
+
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { postId: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout>
+	<section>
+	  <PageTitle title={post.data.title} />
+	</section>
+</Layout>
+
+<style>
+	section {
+		width: 800px;
+	}
+</style>
+
