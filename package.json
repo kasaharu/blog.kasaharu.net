@@ -15,8 +15,10 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.10",
+		"@tailwindcss/vite": "^4.1.14",
 		"astro": "^5.14.4",
-		"microcms-js-sdk": "^3.2.0"
+		"microcms-js-sdk": "^3.2.0",
+		"tailwindcss": "^4.1.14"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.5",
