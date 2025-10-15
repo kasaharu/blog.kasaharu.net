@@ -19,8 +19,8 @@ const microCMSLoader = (endpoint: string) => {
   };
 };
 
-const blogs = defineCollection({
-  loader: microCMSLoader('blogs'),
+const posts = defineCollection({
+  loader: microCMSLoader('posts'),
   schema: z.object({
     id: z.string(),
     createdAt: z.string(),
@@ -32,4 +32,4 @@ const blogs = defineCollection({
   }),
 });
 
-export const collections = { blogs };
+export const collections = { posts };

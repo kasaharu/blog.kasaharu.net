@@ -5,22 +5,22 @@ import PageTitle from '../../layouts/PageTitle.astro';
 
 import '../../styles/global.css';
 
-const blogs = await getCollection('blogs');
+const posts = await getCollection('posts');
 ---
 
 <Layout>
 	<section>
-	  <PageTitle title="blogs" />
+	  <PageTitle title="posts" />
     <ul>
       {
-        blogs.map((blog) => (
+        posts.map((post) => (
           <li class="p-3">
 						<article class="group p-3 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
-              <a href={blog.id}>
+              <a href={post.id}>
 								<div class="text-sm text-slate-500">
-									<time datetime="{blog.data.publishedAt}">{blog.data.publishedAt}</time>
+									<time datetime="{post.data.publishedAt}">{post.data.publishedAt}</time>
 								</div>
-								<h3 class="text-2l font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{blog.data.title}</h3>
+								<h3 class="text-2l font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{post.data.title}</h3>
 							</a>
 						</article>
           </li>
