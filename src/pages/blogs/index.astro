@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageTitle from '../../layouts/PageTitle.astro';
+
+import '../../styles/global.css';
+
+const blogs = await getCollection('blogs');
+---
+
+<Layout>
+	<section>
+	  <PageTitle title="blogs" />
+    <ul>
+      {
+        blogs.map((blog) => (
+          <li class="p-3">
+						<article class="group p-3 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
+              <a href={blog.id}>
+								<div class="text-sm text-slate-500">
+									<time datetime="{blog.data.publishedAt}">{blog.data.publishedAt}</time>
+								</div>
+								<h3 class="text-2l font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{blog.data.title}</h3>
+							</a>
+						</article>
+          </li>
+        ))
+      }
+    </ul>
+	</section>
+</Layout>
+
+<style>
+	section {
+		width: 800px;
+	}
+</style>
